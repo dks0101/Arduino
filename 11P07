@@ -86,7 +86,7 @@ void loop() {
     myservo.writeMicroseconds(_DUTY_MAX);
   } else {
     ServoValue = (int)(((dist_ema-180)*10.3)+550);
-    myservo.writeMicroseconds(valueOfServo);
+    myservo.writeMicroseconds(ServoValue);
     Serial.print("servo"); Serial.println(myservo.read());
   }
   
