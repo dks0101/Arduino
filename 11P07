@@ -33,7 +33,7 @@
 // global variables
 float  dist_ema, dist_prev = _DIST_MAX; // unit: mm
 unsigned long last_sampling_time; // unit: ms
-int valueOfServo;
+int ServoValue;
 
 Servo myservo;
 
@@ -85,7 +85,7 @@ void loop() {
   } else if (dist_raw > _DIST_MAX) {
     myservo.writeMicroseconds(_DUTY_MAX);
   } else {
-    valueOfServo = (int)(((dist_ema-180)*10.3)+550);
+    ServoValue = (int)(((dist_ema-180)*10.3)+550);
     myservo.writeMicroseconds(valueOfServo);
     Serial.print("servo"); Serial.println(myservo.read());
   }
